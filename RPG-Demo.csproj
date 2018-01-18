@@ -123,6 +123,9 @@
     <Compile Include="Assets\Environment\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\Environment\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\Environment\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+    <Compile Include="Assets\Particle Effect Tutorial\CameraMovement.cs" />
+    <Compile Include="Assets\Particle Effect Tutorial\ParticleParent.cs" />
+    <Compile Include="Assets\Particle Effect Tutorial\ParticleSceneGUI.cs" />
     <Compile Include="Assets\Scripts\CharacterCombat.cs" />
     <Compile Include="Assets\Scripts\CharacterStat.cs" />
     <Compile Include="Assets\Scripts\ConvertRegularMesh.cs" />
