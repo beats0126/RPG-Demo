@@ -152,26 +152,54 @@ public class EquipmentManager : MonoBehaviour {
     {
         int slotIndex = (int)newItem.equipSlot;
 
-        Equipment prevousItem = Unequip(slotIndex);
-
-        if (onEquipmentChange != null)
+        if(equips[slotIndex] == null)
         {
-            onEquipmentChange.Invoke(newItem, prevousItem);
+            Equipment prevousItem = Unequip(slotIndex);
+
+            if (onEquipmentChange != null)
+            {
+                onEquipmentChange.Invoke(newItem, prevousItem);
+            }
+
+            equips[slotIndex] = newItem;
+
+            SetEquipmentBlendShapes(newItem, 100);
+
+            currentEquipment[slotIndex] = newItem;
+
+            SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newItem.mesh);
+            newMesh.transform.parent = targetMesh.transform;
+
+            newMesh.bones = targetMesh.bones;
+            newMesh.rootBone = targetMesh.rootBone;
+
+            currentMeshes[slotIndex] = newMesh;
         }
-        
-        equips[slotIndex] = newItem;
+        else
+        {
+            RemoveFromEquip(item, slotIndex);
 
-        SetEquipmentBlendShapes(newItem, 100);
+            Equipment prevousItem = Unequip(slotIndex);
 
-        currentEquipment[slotIndex] = newItem;
+            if (onEquipmentChange != null)
+            {
+                onEquipmentChange.Invoke(newItem, prevousItem);
+            }
 
-        SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newItem.mesh);
-        newMesh.transform.parent = targetMesh.transform;
+            equips[slotIndex] = newItem;
 
-        newMesh.bones = targetMesh.bones;
-        newMesh.rootBone = targetMesh.rootBone;
+            SetEquipmentBlendShapes(newItem, 100);
 
-        currentMeshes[slotIndex] = newMesh;
+            currentEquipment[slotIndex] = newItem;
+
+            SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newItem.mesh);
+            newMesh.transform.parent = targetMesh.transform;
+
+            newMesh.bones = targetMesh.bones;
+            newMesh.rootBone = targetMesh.rootBone;
+
+            currentMeshes[slotIndex] = newMesh;
+        }
 
         if (onEquipChangeCallBack != null)
            onEquipChangeCallBack.Invoke();

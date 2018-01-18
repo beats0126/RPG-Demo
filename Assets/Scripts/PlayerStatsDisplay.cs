@@ -8,6 +8,7 @@ public class PlayerStatsDisplay : MonoBehaviour {
 
     public GameObject player;
 
+    public int maxHealth;
     public int health;
     public int damage;
     public int armor;
@@ -25,11 +26,12 @@ public class PlayerStatsDisplay : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        health = stats.health.GetValue();
+        maxHealth = stats.maxHealth;
+        health = stats.currentHealth;
         armor = stats.armor.GetValue();
         damage = stats.damage.GetValue();
 
-        t_Health.text = "Health : " + health.ToString();
+        t_Health.text = "Health : " + health.ToString() + " / " + maxHealth;
         t_Damage.text = "Damage : " + damage.ToString();
         t_Armor.text = "Armor : " + armor.ToString(); 
         t_Movespeed.text = "Speed : " + movespeed.ToString();

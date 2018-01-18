@@ -9,10 +9,16 @@ public class Equipment : Item {
 
     public SkinnedMeshRenderer mesh;
     public EquipmentMeshRegion[] coveredMeshRegion;
-    
+
+    public int EquipmentLevelModifier;
+
 	public int armorModifier;
     public int damageModifier;
     public int healthModifier;
+
+    public int baseArmor;
+    public int baseDamage;
+    public int baseHealth;
 
     public override void Use()
     {
@@ -21,7 +27,6 @@ public class Equipment : Item {
         EquipmentManager.instance.AddToEquip(this, this);
         //EquipmentManager.instance.Equip(this);
     }
-
 }
 
 public enum EquipmentSlot

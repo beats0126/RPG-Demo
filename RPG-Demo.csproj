@@ -146,6 +146,9 @@
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\PlayerStatsDisplay.cs" />
     <Compile Include="Assets\Scripts\SceneManagement.cs" />
+    <Compile Include="Assets\Scripts\ShopInteraction.cs" />
+    <Compile Include="Assets\Scripts\ShopManager.cs" />
+    <Compile Include="Assets\Scripts\ShopSlot.cs" />
     <Compile Include="Assets\Scripts\Stats.cs" />
     <Compile Include="Assets\Scripts\TPSCameraController.cs" />
     <Compile Include="Assets\Scripts\uiManager.cs" />

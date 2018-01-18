@@ -8,27 +8,28 @@ public class EquipmentSocket : MonoBehaviour {
     EquipmentManager manager;
     public int index;
 
+    public Sprite temp;
+
     Item item;
 
     private void Awake()
     {
         manager = gameManager.GetComponent<EquipmentManager>();
+        temp = icon.sprite;
     }
 
     public void AddToEquip(Item newItem)
     {
         item = newItem;
-
+       
         icon.sprite = item.icon;
-        icon.enabled = true;
     }
 
     public void ClearSlot()
     {
         item = null;
 
-        icon.sprite = null;
-        icon.enabled = false;
+        icon.sprite = temp;
     }
 
     public void RemoveButton()
