@@ -47,6 +47,7 @@ public class uiManager : MonoBehaviour {
             equipmentUI.SetActive(false);
             inventoryUI.SetActive(false);
         }
+        
     }
 
     void UpdateUI()

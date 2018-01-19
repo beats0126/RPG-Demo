@@ -152,9 +152,11 @@ public class EquipmentManager : MonoBehaviour {
     {
         int slotIndex = (int)newItem.equipSlot;
 
-        if(equips[slotIndex] == null)
+        if(equips[slotIndex] != null)
         {
             Equipment prevousItem = Unequip(slotIndex);
+
+            RemoveFromEquip(prevousItem, slotIndex);
 
             if (onEquipmentChange != null)
             {
@@ -177,8 +179,6 @@ public class EquipmentManager : MonoBehaviour {
         }
         else
         {
-            RemoveFromEquip(item, slotIndex);
-
             Equipment prevousItem = Unequip(slotIndex);
 
             if (onEquipmentChange != null)

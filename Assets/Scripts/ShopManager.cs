@@ -8,16 +8,12 @@ public class ShopManager : MonoBehaviour {
 
     private List<Transform> shopSlot = new List<Transform>();
 
-    Inventory inventory;
-
     public List<Item> itemList = new List<Item>();
     //public Item[] items;
 
     // Use this for initialization
     void Awake ()
     {
-        inventory = Inventory.instance;
-
         foreach (Transform slot in shopParent)
         {
             shopSlot.Add(slot);

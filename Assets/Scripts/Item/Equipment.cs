@@ -8,7 +8,8 @@ public class Equipment : Item {
     public EquipmentSlot equipSlot;
 
     public SkinnedMeshRenderer mesh;
-    public EquipmentMeshRegion[] coveredMeshRegion;
+    //public EquipmentMeshRegion[] coveredMeshRegion;
+    public List<EquipmentMeshRegion> coveredMeshRegion = new List<EquipmentMeshRegion>();
 
     public int EquipmentLevelModifier;
 

@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: efad5cd4eb3148e438a4e9ba489bb69e
+timeCreated: 1516329760
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - helmet: {fileID: 1159472500934324, guid: 7da429b483047c54db0342d052094d8f, type: 2}
+  - platemail: {fileID: 1860349489253668, guid: 781d6afda3f7ad14faedd2e856bb477b,
+      type: 2}
+  - plateleg: {fileID: 1389524908415242, guid: e2fe173f6d2fd344b8405c9e738f929a, type: 2}
+  - helmetIcon: {fileID: 21300000, guid: bc155d753f73a6847a7e98e3c78717e6, type: 3}
+  - platelegIcon: {fileID: 21300000, guid: 6702edb7479551f4da444789cf9937f6, type: 3}
+  - platemailIcon: {fileID: 21300000, guid: 91f0771592f12d04c9b6952df21ba832, type: 3}
+  - helmetMesh: {fileID: 137904128947734266, guid: aadb93f91d150dc49b11b71c04f3a474,
+      type: 2}
+  - platelegMesh: {fileID: 137601518378278966, guid: 1e0ba2de1f3c64f49aebfb9fb6f8a578,
+      type: 2}
+  - platemailMesh: {fileID: 137773420275037570, guid: 61e600b241295d747955db005634b204,
+      type: 2}
+  - player: {fileID: 1139630787048196, guid: b88f38f342bb46441ab8c053422d1f0a, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

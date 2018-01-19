@@ -4,13 +4,27 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour
 {
+    CreateEquipment createE;
 
     public Interactable focus;
-
     public LayerMask movementMask;
 
+    CreateEquipment create;
     Camera cam;
     PlayerMotor motor;
+    
+    public GameObject helmet;
+    public GameObject platemail;
+    public GameObject plateleg;
+    Equipment equipment;
+
+    public Sprite helmetIcon;
+    public Sprite platelegIcon;
+    public Sprite platemailIcon;
+
+    public SkinnedMeshRenderer helmetMesh;
+    public SkinnedMeshRenderer platelegMesh;
+    public SkinnedMeshRenderer platemailMesh;
 
     // Use this for initialization
     void Start()
@@ -51,6 +65,12 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            trying();
+        }
     }
 
     void SetFocus(Interactable newFocus)
@@ -73,5 +93,27 @@ public class PlayerController : MonoBehaviour
 
         focus = null;   
         motor.StopFollowingTarget();
+    }
+
+    void trying()
+    {
+        createE.CreateAsset(equipment);
+        equipment.EquipmentLevelModifier = Random.Range(1, 11);
+        equipment.equipSlot = EquipmentSlot.Chest;
+        equipment.icon = platemailIcon;
+        equipment.mesh = platemailMesh;
+
+        equipment.baseArmor = 2;
+        equipment.baseDamage = 5;
+        equipment.baseHealth = 12;
+
+        equipment.armorModifier = 3;
+        equipment.damageModifier = 9;
+        equipment.healthModifier = 25;
+
+        equipment.coveredMeshRegion.Add(EquipmentMeshRegion.Arms);
+        equipment.coveredMeshRegion.Add(EquipmentMeshRegion.Torse);
+
+        platemail.GetComponent<ItemPickup>().item = equipment;
     }
 }
